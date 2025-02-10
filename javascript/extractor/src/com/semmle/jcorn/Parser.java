@@ -787,8 +787,8 @@ public class Parser {
     if (mods != null) {
       String validFlags = "gim";
       if (this.options.ecmaVersion() >= 6) validFlags = "gimuy";
-      if (this.options.ecmaVersion() >= 9) validFlags = "gimsuy";
-      if (!mods.matches("^[" + validFlags + "]*$"))
+      if (this.options.ecmaVersion() >= 9) validFlags = "gimsuvy";
+      if (!mods.matches("^[gimsuyv]*$"))
         this.raise(start, "Invalid regular expression flag");
       if (mods.indexOf('u') >= 0) {
         Matcher m = Pattern.compile("\\\\u\\{([0-9a-fA-F]+)\\}").matcher(content);
